@@ -9,49 +9,51 @@ class IitjAutoproxy < Formula
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/XanderWatson/iitj-autoproxy/releases/download/v0.1.2/iitj-autoproxy_0.1.2_darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "e70e5822cf4bde223757b206ac926911ad0ea3519cdd9dd6be05b5ac84fe0fee"
-
-      def install
-        bin.install "autoproxy"
-        bin.install "autoproxyd"
-      end
-    end
     if Hardware::CPU.intel?
       url "https://github.com/XanderWatson/iitj-autoproxy/releases/download/v0.1.2/iitj-autoproxy_0.1.2_darwin_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "1b211eb6b17d673a84f33fd6c04900a1f814b37db979ad21b0a664ff8050ec5f"
+      sha256 "ebfb8775e5a51e156c5a6e7400071d7ed64629e3e969c12e52de93b2a0ad17d8"
 
       def install
-        bin.install "autoproxy"
-        bin.install "autoproxyd"
+        bin.install "bin/autoproxy"
+        bin.install "bin/autoproxyd"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/XanderWatson/iitj-autoproxy/releases/download/v0.1.2/iitj-autoproxy_0.1.2_darwin_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "54530748acc0e10532b67cd6c361aa1e56979b27f6587ce49c8ef3554ac9772e"
+
+      def install
+        bin.install "bin/autoproxy"
+        bin.install "bin/autoproxyd"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/XanderWatson/iitj-autoproxy/releases/download/v0.1.2/iitj-autoproxy_0.1.2_linux_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "afa88a37d02a4752da28fd55912f00d837c6a3ddc7075b9f73ca56572bfcb4de"
-
-      def install
-        bin.install "autoproxy"
-        bin.install "autoproxyd"
-      end
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/XanderWatson/iitj-autoproxy/releases/download/v0.1.2/iitj-autoproxy_0.1.2_linux_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "c3a50ace58f91105358abccb3d13d2c95ed91ee3bc815059dff720655f2bbedc"
+      sha256 "b6e5c4c366c54cb5aac9fc588356fee423154250e48703aaa08460c6ed9e6f76"
 
       def install
-        bin.install "autoproxy"
-        bin.install "autoproxyd"
+        bin.install "bin/autoproxy"
+        bin.install "bin/autoproxyd"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/XanderWatson/iitj-autoproxy/releases/download/v0.1.2/iitj-autoproxy_0.1.2_linux_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "f8e77d03f201cf3cbf1c3b2b2fe6623b251f162ef0f40274ae58c0b0f4d875fa"
+
+      def install
+        bin.install "bin/autoproxy"
+        bin.install "bin/autoproxyd"
       end
     end
   end
 
   def post_install
     etc.install "autoproxy.config"
+    etc.install "LICENSE"
+    etc.install "README.md"
   end
 
   def caveats
