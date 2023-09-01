@@ -12,7 +12,7 @@ class IitjAutoproxy < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/XanderWatson/iitj-autoproxy/releases/download/v0.1.2/iitj-autoproxy_0.1.2_darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "1ce50e602b23c852537fcd84ba45e7d1b829daebe4709ea6d9ef8c3aab60d897"
+      sha256 "a5aceee69c76636429055edc16c4b3354be4a16773c7949441f9a0424abd1b28"
 
       def install
         bin.install "bin/autoproxyd"
@@ -27,7 +27,7 @@ class IitjAutoproxy < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/XanderWatson/iitj-autoproxy/releases/download/v0.1.2/iitj-autoproxy_0.1.2_darwin_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "133c7ab1e7a7c553b196b47cab03b6b607ce8156a4f679dd8c8f0b7cf0e7a8fe"
+      sha256 "492fd2264baa97be2a805f6e719111b760e3cb3978c46567c255e7488192249e"
 
       def install
         bin.install "bin/autoproxyd"
