@@ -12,22 +12,20 @@ class IitjAutoproxy < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/XanderWatson/iitj-autoproxy/releases/download/v0.1.2/iitj-autoproxy_0.1.2_darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "5fe22c444de03d65057fa134dd01d56f4cf164b95e0ffd136dbc47f4739edd4a"
+      sha256 "f7421aa10417eb7671c14b7768a7d4f91b4d09a1a1c7f10b816e49bdc402429d"
 
       def install
-        bin.install "bin/autoproxy"
-        bin.install "bin/autoproxyd"
-        bin.install "scripts/darwin/daemon-start.sh"
-        bin.install "scripts/darwin/daemon-stop.sh"
-        bin.install "scripts/darwin/login.sh"
+        chmod +x darwin-install.sh
+        ./darwin-install.sh
       end
     end
   end
 
   def post_install
-    etc.install "autoproxy.config"
-    etc.install "LICENSE"
-    etc.install "README.md"
+    mkdir -p /usr/share/licenses/iitj-autoproxy
+    mkdir -p /usr/share/doc/iitj-autoproxy
+    cp LICENSE /usr/share/licenses/iitj-autoproxy/LICENSE
+    cp README.md /usr/share/doc/iitj-autoproxy/README.md
   end
 
   def caveats
