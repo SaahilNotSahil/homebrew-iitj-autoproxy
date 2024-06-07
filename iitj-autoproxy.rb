@@ -11,7 +11,7 @@ class IitjAutoproxy < Formula
   on_macos do
     on_intel do
       url "https://github.com/SaahilNotSahil/iitj-autoproxy/releases/download/0.1.2/iitj-autoproxy_0.1.2_darwin_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "a6fef7d1b4e29f5dc06251cb9d2188d36e3172e86f2a6660fe9b08281b5edf47"
+      sha256 "0474e42a19b5d663baef0e747afd657ec03c0a6374e1de49d7c8b72050edaffb"
 
       def install
         bin.install "bin/autoproxyd"
@@ -26,7 +26,7 @@ class IitjAutoproxy < Formula
     end
     on_arm do
       url "https://github.com/SaahilNotSahil/iitj-autoproxy/releases/download/0.1.2/iitj-autoproxy_0.1.2_darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "2aabbb15b7309085c3705b5f24051f6397df319cc630bed11d5926a36832f45b"
+      sha256 "626ce6bab193cec18988e7d05f4883b9b933cfb9452e61f56e18868c2880483b"
 
       def install
         bin.install "bin/autoproxyd"
@@ -45,7 +45,7 @@ class IitjAutoproxy < Formula
     on_intel do
       if Hardware::CPU.is_64_bit?
         url "https://github.com/SaahilNotSahil/iitj-autoproxy/releases/download/0.1.2/iitj-autoproxy_0.1.2_linux_amd64.tar.gz", using: CurlDownloadStrategy
-        sha256 "cccf26fdcd8d6e9905bf4edfe5ed9476c1d87a09d9ddcfabc1391be20de03897"
+        sha256 "4a3fa502f0b32a48b28bfdb76b621ea087c0b2f2dc8c560961cb8b76a3da535c"
 
         def install
           bin.install "bin/autoproxyd"
@@ -62,7 +62,7 @@ class IitjAutoproxy < Formula
     on_arm do
       if Hardware::CPU.is_64_bit?
         url "https://github.com/SaahilNotSahil/iitj-autoproxy/releases/download/0.1.2/iitj-autoproxy_0.1.2_linux_arm64.tar.gz", using: CurlDownloadStrategy
-        sha256 "c60b8f00760a2fcc1fb6a45db9355394f3ef7f1ccb0feb3e3e3be2d640a14178"
+        sha256 "0d021c3a0e64d10e0f449064b2b7db63c7011eb388aca66fe95863d0e5f5cd32"
 
         def install
           bin.install "bin/autoproxyd"
